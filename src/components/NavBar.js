@@ -4,7 +4,7 @@ export default function NavBar() {
   return (
     <div className="bg-white shadow-lg shadow-gray-950/20 fixed w-full">
       <div className="bg-black">
-        <div className="container mx-auto flex items-center justify-between px-10 py-2">
+        <div className="container mx-auto flex items-center justify-between py-2">
           <ul className="flex space-x-3">
             {/* Facebook icon */}
             <li>
@@ -56,7 +56,7 @@ export default function NavBar() {
         </div>
       </div>
 
-      <nav className="container mx-auto flex items-center justify-between py-5 px-10">
+      <nav className="container mx-auto flex items-center justify-between py-5">
         {/* Nav brand */}
         <h1 className="text-3xl font-extrabold">InsideOut.</h1>
 
