@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function NavBar() {
   return (
-    <div>
+    <div className="bg-white shadow-lg shadow-gray-950/20 fixed w-full">
       <div className="bg-black">
         <div className="container mx-auto flex items-center justify-between px-10 py-2">
           <ul className="flex space-x-3">
@@ -57,7 +57,10 @@ export default function NavBar() {
       </div>
 
       <nav className="container mx-auto flex items-center justify-between py-5 px-10">
-        <h1 className="text-3xl font-extrabold">Blinds.</h1>
+        {/* Nav brand */}
+        <h1 className="text-3xl font-extrabold">InsideOut.</h1>
+
+        {/* Nav menu */}
         <ul className="flex space-x-10 font-medium">
           <li>
             <a href="/">Home</a>
