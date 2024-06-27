@@ -74,7 +74,7 @@ export default function Home() {
       </div>
 
       {/* About section */}
-      <div className="py-14">
+      <div className="py-14 pt-28cover">
         <div className="container mx-auto flex space-x-20 items-center">
           <Image
             className="rounded"
@@ -89,10 +89,7 @@ export default function Home() {
               About
             </h2>
             <h2 className="text-6xl uppercase font-semibold mb-5">
-              Inside out{" "}
-              <span className="text-3xl uppercase font-semibold mb-5">
-                Window coverings
-              </span>
+              Inside out
             </h2>
 
             <p>
@@ -108,8 +105,64 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Product section */}
+      {/* Why choose us section */}
       <div className="py-14">
+        <div className="container mx-auto">
+          <div className="w-1/2 mb-10">
+            <h2 className="text-3xl uppercase font-semibold text-gray-600">
+              Why
+              <div className="text-6xl uppercase font-semibold mb-5 text-black">
+                Choose us?
+              </div>
+            </h2>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+
+          <div className="flex space-x-10">
+            <div className="h-80 p-2 bg-white rounded shadow-lg">
+              <Image
+                className="rounded object-cover h-full"
+                src="/brandon-morgan-3S132mkDZRw-unsplash.jpg"
+                width={700}
+                height={300}
+                alt="window blinds"
+              />
+            </div>
+
+            <div className="h-80 p-2 bg-white rounded shadow-lg">
+              <Image
+                className="rounded object-cover h-full"
+                src="/steinar-engeland-hmIFzdQ6U5k-unsplash.jpg"
+                width={700}
+                height={600}
+                alt="window blinds"
+              />
+            </div>
+
+            <div className="h-80 p-2 bg-white rounded shadow-lg">
+              <Image
+                className="rounded object-cover h-full"
+                src="/steinar-engeland-hmIFzdQ6U5k-unsplash.jpg"
+                width={700}
+                height={600}
+                alt="window blinds"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Product section */}
+      <div className="py-14 pt-0">
         <div className="flex">
           <div className="w-full relative bg-slate-600">
             <Image
@@ -171,6 +224,11 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Contact section */}
+      <div className="py-14 pt-0">
+        <h2>Contact us now!</h2>
       </div>
     </main>
   );

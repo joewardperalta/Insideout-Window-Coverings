@@ -59,7 +59,7 @@ export default function NavBar() {
 
       {/* Navbar */}
       <div className="sticky top-0 bg-white shadow-lg shadow-gray-950/20 w-full z-50">
-        <nav className="container mx-auto flex items-center justify-between py-6">
+        <nav className="container mx-auto flex items-center justify-between py-7">
           {/* Nav Brand */}
           <h1 className="text-4xl font-extrabold">InsideOut.</h1>
 
