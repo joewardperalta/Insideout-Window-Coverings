@@ -45,8 +45,8 @@ export default function Home() {
         <Image
           className="object-cover h-full"
           src={"/" + heroCover}
-          width={1920}
-          height={1080}
+          width={6000}
+          height={6000}
           alt="blinds"
         />
 
@@ -104,6 +104,71 @@ export default function Home() {
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Product section */}
+      <div className="py-14">
+        <div className="flex">
+          <div className="w-full relative bg-slate-600">
+            <Image
+              className="object-cover w-full h-full"
+              src="/darren-richardson-9epGsXo_VdI-unsplash.jpg"
+              width={2000}
+              height={2000}
+              alt="window blinds"
+            />
+
+            <div className="absolute bottom-0 py-5 px-5 text-white bg-gray-950/80">
+              <h6 className="font-semibold text-3xl mb-2">Blinds</h6>
+              <p className="text-gray-300">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Risus pretium quam vulputate dignissim suspendisse in. Et
+                sollicitudin ac orci phasellus egestas.
+              </p>
+            </div>
+          </div>
+
+          <div className="w-full bg-slate-600 relative">
+            <Image
+              className="object-cover w-full h-full"
+              src="/Window-Curtains-Master-Bed-Room.jpg"
+              width={2000}
+              height={2000}
+              alt="window curtains"
+            />
+
+            <div className="absolute bottom-0 py-5 px-5 text-white bg-gray-950/80">
+              <h6 className="font-semibold text-3xl mb-2">Curtains</h6>
+              <p className="text-gray-300">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Risus pretium quam vulputate dignissim suspendisse in. Et
+                sollicitudin ac orci phasellus egestas.
+              </p>
+            </div>
+          </div>
+
+          <div className="w-full bg-slate-600 relative">
+            <Image
+              className="object-cover w-full h-full"
+              src="/White-Linen-Shades.jpg"
+              width={2000}
+              height={2000}
+              alt="Window coverings"
+            />
+
+            <div className="absolute bottom-0 py-5 px-5 text-white bg-gray-950/80">
+              <h6 className="font-semibold text-3xl mb-2">Coverings</h6>
+              <p className="text-gray-300">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Risus pretium quam vulputate dignissim suspendisse in. Et
+                sollicitudin ac orci phasellus egestas.
+              </p>
+            </div>
           </div>
         </div>
       </div>

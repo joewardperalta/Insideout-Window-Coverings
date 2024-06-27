@@ -2,7 +2,8 @@ import Image from "next/image";
 
 export default function NavBar() {
   return (
-    <div className="bg-white shadow-lg shadow-gray-950/20 fixed w-full">
+    <>
+      {/* Contacts Navbar */}
       <div className="bg-black">
         <div className="container mx-auto flex items-center justify-between py-2">
           <ul className="flex space-x-3">
@@ -56,23 +57,26 @@ export default function NavBar() {
         </div>
       </div>
 
-      <nav className="container mx-auto flex items-center justify-between py-5">
-        {/* Nav brand */}
-        <h1 className="text-3xl font-extrabold">InsideOut.</h1>
+      {/* Navbar */}
+      <div className="sticky top-0 bg-white shadow-lg shadow-gray-950/20 w-full z-50">
+        <nav className="container mx-auto flex items-center justify-between py-6">
+          {/* Nav Brand */}
+          <h1 className="text-4xl font-extrabold">InsideOut.</h1>
 
-        {/* Nav menu */}
-        <ul className="flex space-x-10 font-medium">
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/products">Products</a>
-          </li>
-          <li>
-            <a href="/contact">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+          {/* Nav Menu */}
+          <ul className="flex space-x-10 font-medium">
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/products">Products</a>
+            </li>
+            <li>
+              <a href="/contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </>
   );
 }
