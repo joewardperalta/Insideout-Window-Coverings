@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <div className="bg-black py-5 text-white">
+    <div className="bg-black py-5 mt-14 text-white">
       <div className="container mx-auto flex justify-between">
         <p className="uppercase">&copy; 2024 InsideOut all rights reserved</p>
         <ul className="flex space-x-3">
@@ -46,7 +46,6 @@ export default function Footer() {
           <li>
             <a href="#">
               <Image
-                className="mr-2"
                 src="/icons/352510_local_phone_icon.svg"
                 width={20}
                 height={20}

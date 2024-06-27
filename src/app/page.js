@@ -74,7 +74,7 @@ export default function Home() {
       </div>
 
       {/* About section */}
-      <div className="py-14 pt-28cover">
+      <div className="py-14 pt-28">
         <div className="container mx-auto flex space-x-20 items-center">
           <Image
             className="rounded"
@@ -162,7 +162,7 @@ export default function Home() {
       </div>
 
       {/* Product section */}
-      <div className="py-14 pt-0">
+      <div className="py-14">
         <div className="flex">
           <div className="w-full relative bg-slate-600">
             <Image
@@ -227,7 +227,7 @@ export default function Home() {
       </div>
 
       {/* Contact section */}
-      <div className="py-14 pt-0">
+      <div className="py-14">
         <div className="container mx-auto flex flex-col items-center">
           <h2 className="text-5xl font-semibold mb-2">Contact us</h2>
           <p className="text-xl mb-16">
