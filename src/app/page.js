@@ -131,17 +131,17 @@ export default function Home() {
             <div className="h-80 p-2 bg-white rounded shadow-lg">
               <Image
                 className="rounded object-cover h-full"
-                src="/brandon-morgan-3S132mkDZRw-unsplash.jpg"
+                src="/large-windows-alustra-pirouette-window-shadings-hunter-douglas-traditional-living-room-one-stop-decorating.jpg"
                 width={700}
                 height={300}
-                alt="window blinds"
+                alt="window coverings"
               />
             </div>
 
             <div className="h-80 p-2 bg-white rounded shadow-lg">
               <Image
                 className="rounded object-cover h-full"
-                src="/steinar-engeland-hmIFzdQ6U5k-unsplash.jpg"
+                src="/btg_product_wood_laredo_pewter.jpg"
                 width={700}
                 height={600}
                 alt="window blinds"
@@ -151,7 +151,7 @@ export default function Home() {
             <div className="h-80 p-2 bg-white rounded shadow-lg">
               <Image
                 className="rounded object-cover h-full"
-                src="/steinar-engeland-hmIFzdQ6U5k-unsplash.jpg"
+                src="/ba2cd3_2f644cfd1f0d4b819c2e995568e3c7ad~mv2.jpg"
                 width={700}
                 height={600}
                 alt="window blinds"
@@ -228,7 +228,69 @@ export default function Home() {
 
       {/* Contact section */}
       <div className="py-14 pt-0">
-        <h2>Contact us now!</h2>
+        <div className="container mx-auto flex flex-col items-center">
+          <h2 className="text-5xl font-semibold mb-2">Contact us</h2>
+          <p className="text-xl mb-16">
+            Get in touch with us to learn more about InsideOut
+          </p>
+
+          <form className="w-1/2 space-y-5">
+            <div className="flex space-x-5">
+              {/* Firstname */}
+              <input
+                className="border-2 border-gray-500 py-2 px-4 rounded w-full"
+                type="text"
+                id="firstname"
+                name="firstname"
+                placeholder="First name"
+              />
+
+              {/* Lastname */}
+              <input
+                className="border-2 border-gray-500 py-2 px-4 rounded w-full"
+                type="text"
+                id="firstname"
+                name="firstname"
+                placeholder="Last name"
+              />
+            </div>
+
+            {/* Email */}
+            <input
+              className="border-2 border-gray-500 py-2 px-4 rounded w-full"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+            />
+
+            {/* Subject */}
+            <input
+              className="border-2 border-gray-500 py-2 px-4 rounded w-full"
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Subject"
+            />
+
+            {/* Message */}
+            <textarea
+              className="border-2 border-gray-500 py-2 px-4 rounded w-full"
+              id="message"
+              name="message"
+              placeholder="Enter your message here..."
+              rows={10}
+            ></textarea>
+
+            <button
+              className="bg-gray-950 rounded w-full p-3 text-center text-white"
+              type="submit"
+              value="Submit"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
     </main>
   );
