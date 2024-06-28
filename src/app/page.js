@@ -85,10 +85,10 @@ export default function Home() {
           />
 
           <div>
-            <h2 className="text-3xl uppercase font-semibold text-gray-600">
-              About
-            </h2>
             <h2 className="text-6xl uppercase font-semibold mb-5">
+              <div className="text-3xl uppercase font-semibold text-gray-600">
+                About
+              </div>
               Inside out
             </h2>
 
