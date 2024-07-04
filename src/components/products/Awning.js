@@ -1,13 +1,13 @@
-import Product from "./Product";
+import Product from "../Product";
 
-export default function Shades() {
+export default function Awning() {
   return (
     // Product Introductory
     <div>
-      <div className="bg-window-shades bg-cover bg-center bg-no-repeat mb-14">
+      <div className="bg-window-awning bg-cover bg-center bg-no-repeat mb-14">
         <div className="container mx-auto pt-72 pb-24 text-white">
           <div className="w-1/2">
-            <h2 className="text-4xl font-semibold uppercase mb-8">Shades</h2>
+            <h2 className="text-4xl font-semibold uppercase mb-8">Awning</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.

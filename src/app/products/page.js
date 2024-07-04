@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import WindowCoverings from "@/components/WindowCoverings";
-import Blinds from "@/components/Blinds";
-import Shutters from "@/components/Shutters";
-import Drapery from "@/components/Drapery";
-import Shades from "@/components/Shades";
+import WindowCoverings from "@/components/products/WindowCoverings";
+import Blinds from "@/components/products/Blinds";
+import Shutters from "@/components/products/Shutters";
+import Drapery from "@/components/products/Drapery";
+import Shades from "@/components/products/Shades";
+import Awning from "@/components/products/Awning";
 
 export default function Products() {
   const [currentCategory, setCurrentCategory] = useState(WindowCoverings);
@@ -54,6 +55,11 @@ export default function Products() {
           <li>
             <button onClick={(e) => handleCategoryClick(e.target, Drapery)}>
               Drapery
+            </button>
+          </li>
+          <li>
+            <button onClick={(e) => handleCategoryClick(e.target, Awning)}>
+              Awning
             </button>
           </li>
         </ul>

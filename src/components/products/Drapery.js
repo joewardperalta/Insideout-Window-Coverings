@@ -1,13 +1,13 @@
-import Product from "./Product";
+import Product from "../Product";
 
-export default function Shutters() {
+export default function Drapery() {
   return (
     // Product Introductory
     <div>
-      <div className="bg-window-shutters bg-cover bg-center bg-no-repeat mb-14">
+      <div className="bg-window-drapery bg-cover bg-center bg-no-repeat mb-14">
         <div className="container mx-auto pt-72 pb-24 text-white">
           <div className="w-1/2">
-            <h2 className="text-4xl font-semibold uppercase mb-8">Shutters</h2>
+            <h2 className="text-4xl font-semibold uppercase mb-8">Drapery</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
