@@ -13,14 +13,8 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
 
-        "window-coverings":
-          "linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/licensed/pexels-heyho-6438767.jpg')",
-
         "window-blinds":
           "linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/licensed/pexels-curtis-adams-1694007-3773571.jpg')",
-
-        "window-shutters":
-          "linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/licensed/pexels-andrew-2682318.jpg')",
 
         "window-drapery":
           "linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/licensed/pexels-heyho-6903221.jpg')",
@@ -30,6 +24,12 @@ module.exports = {
 
         "window-awning":
           "linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/licensed/pexels-efrem-efre-2786187-16976919.jpg')",
+
+        "window-skylight":
+          "linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/licensed/alisha-hieb-qly35FEQwA4-unsplash.jpg')",
+
+        "window-motorization":
+          "linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/licensed/pexels-pixabay-276724.jpg')",
       },
     },
   },
