@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import ContactForm from "@/components/ContactForm";
 
 let index = 0;
 
@@ -41,7 +42,7 @@ export default function Home() {
   return (
     <main>
       {/* Hero section */}
-      <div className="h-screen" id="hero">
+      <div id="hero">
         <Image
           className="object-cover h-full"
           src={"/" + heroCover}
@@ -93,13 +94,17 @@ export default function Home() {
             </h2>
 
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Inside-out window coverings is owned Independently. We cater to
+              all type of window treatment indoor or outdoor. We are committed
+              to deliver the best shading and great customer service and
+              affordable prices for all kind of consumer, residential or
+              commercial.
+            </p>
+
+            <p>
+              With this ever changing market, we are dedicated bring our best to
+              provide our client an excellent customer service and fair market
+              price on all our products.
             </p>
           </div>
         </div>
@@ -117,13 +122,9 @@ export default function Home() {
             </h2>
 
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              We offer a wide range of products and variety of fabric selection.
+              We work hard on making sure that the project is completed on a
+              timely manner. Consultation and check measure are free of charge.
             </p>
           </div>
 
@@ -164,6 +165,7 @@ export default function Home() {
       {/* Product section */}
       <div className="py-14">
         <div className="flex">
+          {/* Blinds */}
           <div className="w-full relative bg-slate-600">
             <Image
               className="object-cover w-full h-full"
@@ -173,17 +175,19 @@ export default function Home() {
               alt="window blinds"
             />
 
-            <div className="absolute bottom-0 py-5 px-5 text-white bg-gray-950/80">
+            <div className="absolute bottom-0 py-5 px-5 text-white bg-gray-950/80 h-1/4">
               <h6 className="font-semibold text-3xl mb-2">Blinds</h6>
               <p className="text-gray-300">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Risus pretium quam vulputate dignissim suspendisse in. Et
-                sollicitudin ac orci phasellus egestas.
+                Window blinds offer a combination of practical benefits,
+                aesthetic appeal, and functional versatility, making them a
+                popular choice for enhancing privacy, controlling light, and
+                improving energy efficiency in residential and commercial
+                spaces.
               </p>
             </div>
           </div>
 
+          {/* Drapery */}
           <div className="w-full bg-slate-600 relative">
             <Image
               className="object-cover w-full h-full"
@@ -193,17 +197,17 @@ export default function Home() {
               alt="window curtains"
             />
 
-            <div className="absolute bottom-0 py-5 px-5 text-white bg-gray-950/80">
-              <h6 className="font-semibold text-3xl mb-2">Curtains</h6>
+            <div className="absolute bottom-0 py-5 px-5 text-white bg-gray-950/80  h-1/4">
+              <h6 className="font-semibold text-3xl mb-2">Drapery</h6>
               <p className="text-gray-300">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Risus pretium quam vulputate dignissim suspendisse in. Et
-                sollicitudin ac orci phasellus egestas.
+                Drapery provides a blend of style, functionality, and practical
+                benefits, making them a popular choice for enhancing the comfort
+                and aesthetics of any living or working space.
               </p>
             </div>
           </div>
 
+          {/* Shades */}
           <div className="w-full bg-slate-600 relative">
             <Image
               className="object-cover w-full h-full"
@@ -213,13 +217,12 @@ export default function Home() {
               alt="Window coverings"
             />
 
-            <div className="absolute bottom-0 py-5 px-5 text-white bg-gray-950/80">
-              <h6 className="font-semibold text-3xl mb-2">Coverings</h6>
+            <div className="absolute bottom-0 py-5 px-5 text-white bg-gray-950/80 h-1/4">
+              <h6 className="font-semibold text-3xl mb-2">Shades</h6>
               <p className="text-gray-300">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Risus pretium quam vulputate dignissim suspendisse in. Et
-                sollicitudin ac orci phasellus egestas.
+                Window shades offer a blend of functionality, style, and energy
+                efficiency, making them a practical and attractive choice for
+                enhancing the comfort and ambiance of any space.
               </p>
             </div>
           </div>
@@ -234,62 +237,7 @@ export default function Home() {
             Get in touch with us to learn more about InsideOut
           </p>
 
-          <form className="w-1/2 space-y-5">
-            <div className="flex space-x-5">
-              {/* Firstname */}
-              <input
-                className="border-2 border-gray-500 py-2 px-4 rounded w-full"
-                type="text"
-                id="firstname"
-                name="firstname"
-                placeholder="First name"
-              />
-
-              {/* Lastname */}
-              <input
-                className="border-2 border-gray-500 py-2 px-4 rounded w-full"
-                type="text"
-                id="firstname"
-                name="firstname"
-                placeholder="Last name"
-              />
-            </div>
-
-            {/* Email */}
-            <input
-              className="border-2 border-gray-500 py-2 px-4 rounded w-full"
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email"
-            />
-
-            {/* Subject */}
-            <input
-              className="border-2 border-gray-500 py-2 px-4 rounded w-full"
-              type="text"
-              id="subject"
-              name="subject"
-              placeholder="Subject"
-            />
-
-            {/* Message */}
-            <textarea
-              className="border-2 border-gray-500 py-2 px-4 rounded w-full"
-              id="message"
-              name="message"
-              placeholder="Enter your message here..."
-              rows={10}
-            ></textarea>
-
-            <button
-              className="bg-gray-950 rounded w-full p-3 text-center text-white"
-              type="submit"
-              value="Submit"
-            >
-              Submit
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </div>
     </main>

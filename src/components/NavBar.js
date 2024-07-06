@@ -6,45 +6,7 @@ export default function NavBar() {
     <>
       {/* Contacts Navbar */}
       <div className="bg-black">
-        <div className="container mx-auto flex items-center justify-between py-2">
-          <ul className="flex space-x-3">
-            {/* Facebook icon */}
-            <li>
-              <a href="#">
-                <Image
-                  src="/icons/5279111_network_fb_social media_facebook_facebook logo_icon (1).svg"
-                  width={20}
-                  height={20}
-                  alt="facebook icon"
-                ></Image>
-              </a>
-            </li>
-
-            {/* Instagram icon */}
-            <li>
-              <a href="#">
-                <Image
-                  src="/icons/8679433_instagram_fill_icon.svg"
-                  width={20}
-                  height={20}
-                  alt="instagram icon"
-                ></Image>
-              </a>
-            </li>
-
-            {/* Twitter icon */}
-            <li>
-              <a href="#">
-                <Image
-                  src="/icons/5279123_tweet_twitter_twitter logo_icon.svg"
-                  width={20}
-                  height={20}
-                  alt="twitter icon"
-                ></Image>
-              </a>
-            </li>
-          </ul>
-
+        <div className="container mx-auto flex items-center justify-end py-2">
           <div className="flex">
             <Image
               className="mr-2"
@@ -53,7 +15,9 @@ export default function NavBar() {
               height={20}
               alt="phone icon"
             ></Image>
-            <p className="text-white">123-456-7890</p>
+            <a className="text-white" href="tel:(289) 980-0725">
+              (289) 980-0725
+            </a>
           </div>
         </div>
       </div>

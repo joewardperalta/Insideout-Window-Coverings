@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+p {
+  margin: 12px 0;
+}
+
 #categories li {
   width: 100%;
 }
@@ -22,4 +26,13 @@
 
 .product {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.205);
+}
+
+.container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+#hero {
+  height: 40rem;
 }
