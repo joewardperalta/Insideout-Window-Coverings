@@ -6,6 +6,9 @@ export async function POST(request) {
     password: process.env.NEXT_PUBLIC_EMAIL_PASSWORD,
   };
 
+  console.log(process.env.NEXT_PUBLIC_EMAIL_PASSWORD);
+  console.log(process.env.NEXT_PUBLIC_EMAIL_USERNAME);
+
   const formData = await request.formData();
   const sender = {
     firstname: formData.get("firstname"),
