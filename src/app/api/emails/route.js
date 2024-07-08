@@ -53,7 +53,7 @@ function sendEmail(recepient, sender) {
         message: "Email was not sent. Please try again.",
       });
     } else {
-      Response.json({ message: "Email was successfully sent" });
+      return Response.json({ message: "Email was successfully sent" });
     }
   });
 }
