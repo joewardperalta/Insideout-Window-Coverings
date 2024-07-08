@@ -19,7 +19,9 @@ export async function POST(request) {
     message: formData.get("message"),
   };
 
-  return sendEmail(recepient, sender);
+  sendEmail(recepient, sender);
+
+  return Response.json({ message: "Email sent successfully" });
 }
 
 // send email
@@ -47,13 +49,9 @@ function sendEmail(recepient, sender) {
     html: message,
   };
 
-  transporter.sendMail(email, (error) => {
+  return transporter.sendMail(email, (error) => {
     if (error) {
-      return Response.json({
-        message: "Email was not sent. Please try again.",
-      });
-    } else {
-      return Response.json({ message: "Email was successfully sent" });
+      console.log(error);
     }
   });
 }
