@@ -19,13 +19,6 @@ export async function POST(request) {
     message: formData.get("message"),
   };
 
-  sendEmail(recepient, sender);
-
-  return Response.json({ message: "Email sent successfully" });
-}
-
-// send email
-function sendEmail(recepient, sender) {
   const transporter = nodemailer.createTransport({
     host: "smtp-mail.outlook.com",
     port: 587,
@@ -36,22 +29,38 @@ function sendEmail(recepient, sender) {
     },
   });
 
-  const message = ` <p>${sender.message}</p><br />
-                    <p>Thank you,</p>
-                    <p style="font-weight: bold; margin-bottom: 0px;">${sender.firstname} ${sender.lastname}</p>
-                    <a href="mailto:${sender.email}">${sender.email}</a>
-                    <p style="margin: 0px;">${sender.phone}</p>`;
+  await new Promise((resolve, reject) => {
+    // verify connection configuration
+    transporter.verify(function (error, success) {
+      if (error) {
+        console.log(error);
+        reject(error);
+      } else {
+        console.log("Server is ready to take our messages");
+        resolve(success);
+      }
+    });
+  });
 
-  const email = {
+  const mailData = {
     from: recepient.username,
     to: recepient.username,
     subject: sender.subject,
-    html: message,
+    html: sender.message,
   };
 
-  return transporter.sendMail(email, (error) => {
-    if (error) {
-      console.log(error);
-    }
+  await new Promise((resolve, reject) => {
+    // send mail
+    transporter.sendMail(mailData, (err, info) => {
+      if (err) {
+        console.error(err);
+        reject(err);
+      } else {
+        console.log(info);
+        resolve(info);
+      }
+    });
   });
+
+  return Response.json({ message: "Email sent successfully" });
 }
