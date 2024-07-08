@@ -16,9 +16,7 @@ export async function POST(request) {
     message: formData.get("message"),
   };
 
-  sendEmail(recepient, sender);
-
-  return Response.json({ message: "Email was successfully sent" });
+  return sendEmail(recepient, sender);
 }
 
 // send email
@@ -51,6 +49,8 @@ function sendEmail(recepient, sender) {
       return Response.json({
         message: "Email was not sent. Please try again.",
       });
+    } else {
+      Response.json({ message: "Email was successfully sent" });
     }
   });
 }
