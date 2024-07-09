@@ -47,25 +47,12 @@ export default function Home() {
       {/* Hero section */}
       <div className="relative" id="hero">
         <Image
-          className="object-cover h-full w-full blur-sm object-center "
+          className="object-cover h-full w-full object-center "
           src={heroCover}
           width={1000}
           height={1000}
           alt="blinds"
         />
-
-        <div
-          className="absolute left-96 top-1/2 bg-white p-3 shadow-2xl rounded"
-          id="hero-img"
-        >
-          <Image
-            className="object-cover object-center rounded"
-            src={heroCover}
-            width={600}
-            height={600}
-            alt="blinds"
-          />
-        </div>
 
         {/* Left and right arrow keys */}
         <div className="bg-gray-950/50 w-full relative bottom-12 py-2">
