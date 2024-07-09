@@ -47,7 +47,7 @@ export default function Home() {
       {/* Hero section */}
       <div className="relative" id="hero">
         <Image
-          className="object-cover h-full w-full blur-sm object-center"
+          className="object-cover h-full w-full blur-sm object-center "
           src={heroCover}
           width={1000}
           height={1000}
@@ -55,11 +55,11 @@ export default function Home() {
         />
 
         <div
-          className="absolute left-96 top-1/2 bg-white p-3 shadow-2xl"
+          className="absolute left-96 top-1/2 bg-white p-3 shadow-2xl rounded"
           id="hero-img"
         >
           <Image
-            className="object-cover object-center"
+            className="object-cover object-center rounded"
             src={heroCover}
             width={600}
             height={600}
