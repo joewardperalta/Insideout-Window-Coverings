@@ -8,16 +8,21 @@ let index = 0;
 
 export default function Home() {
   const heroCoverUrl = [
-    "/background/image0000011.png",
-    "/background/image0000021.png",
-    "/background/image0000031.png",
-    "/background/image0000041.png",
-    "/background/image0000051.png",
-    "/background/image0000061.png",
-    "/background/image0000071.png",
-    "/background/image0000081.png",
-    "/background/image0000091.png",
-    "/background/image0000101.png",
+    [
+      "/background/image0000011.png",
+      "/background/image0000021.png",
+      "/background/image0000031.png",
+    ],
+    [
+      "/background/image0000041.png",
+      "/background/image0000051.png",
+      "/background/image0000061.png",
+    ],
+    [
+      "/background/image0000071.png",
+      "/background/image0000081.png",
+      "/background/image0000091.png",
+    ],
   ];
   const [heroCover, setHeroCover] = useState(heroCoverUrl[0]);
 
@@ -46,13 +51,19 @@ export default function Home() {
     <main>
       {/* Hero section */}
       <div className="relative" id="hero">
-        <Image
-          className="object-cover h-full w-full object-center "
-          src={heroCover}
-          width={1000}
-          height={1000}
-          alt="blinds"
-        />
+        <div className="h-full w-full flex">
+          {heroCover.map((url) => (
+            <div key={url} className="w-full">
+              <Image
+                className="w-full h-full object-cover"
+                width={2000}
+                height={2000}
+                src={url}
+                alt="blinds"
+              />
+            </div>
+          ))}
+        </div>
 
         {/* Left and right arrow keys */}
         <div className="bg-gray-950/50 w-full relative bottom-12 py-2">
