@@ -15,13 +15,13 @@ export default function Home() {
     ],
     [
       "/background/image0000041.png",
-      "/background/image0000051.png",
-      "/background/image0000061.png",
+      "/background/image0000081.png",
+      "/background/image0000091.png",
     ],
     [
       "/background/image0000071.png",
-      "/background/image0000081.png",
-      "/background/image0000091.png",
+      "/background/image0000061.png",
+      "/background/image0000101.png",
     ],
   ];
   const [heroCover, setHeroCover] = useState(heroCoverUrl[0]);
