@@ -8,8 +8,6 @@ import { usePathname } from "next/navigation";
 export default function NavBar({ handlerCategoryFunction }) {
   const pathname = usePathname();
 
-  console.log(pathname);
-
   return (
     <>
       {/* Contacts Navbar */}
