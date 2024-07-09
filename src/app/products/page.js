@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Product from "@/components/Product";
 import Link from "next/link";
 
@@ -96,16 +96,14 @@ export default function Products() {
 
   // handles the category navigation click
   function handleCategoryClick(e) {
-    const categories = e.parentElement.parentElement.childNodes;
-    const currentActiveCategory = e.parentElement;
+    const categories = e.target.parentElement.parentElement.childNodes;
+    const currentActiveCategory = e.target.parentElement;
 
     // remove active class from the list
     categories.forEach((e) => e.classList.remove("active"));
 
     // add active class to the current category
     currentActiveCategory.classList.add("active");
-
-    console.log(currentActiveCategory.id);
 
     switch (currentActiveCategory.id) {
       case "blinds":
@@ -131,43 +129,17 @@ export default function Products() {
     }
   }
 
+  // add onclick event handlers to category buttons
+  useEffect(() => {
+    const btnCategories = document.querySelectorAll(".btnCategory");
+    btnCategories.forEach((e) => {
+      e.addEventListener("click", handleCategoryClick);
+    });
+  });
+
   return (
     <div className="">
       {/* Product Categories */}
-      <div className="bg-gray-100 font-medium">
-        <ul className="container mx-auto flex" id="categories">
-          <li className="active" id="blinds">
-            <button onClick={(e) => handleCategoryClick(e.target)}>
-              Blinds
-            </button>
-          </li>
-          <li id="shades">
-            <button onClick={(e) => handleCategoryClick(e.target)}>
-              Shades
-            </button>
-          </li>
-          <li id="awning">
-            <button onClick={(e) => handleCategoryClick(e.target)}>
-              Awning
-            </button>
-          </li>
-          <li id="drapery">
-            <button onClick={(e) => handleCategoryClick(e.target)}>
-              Drapery
-            </button>
-          </li>
-          <li id="skylight">
-            <button onClick={(e) => handleCategoryClick(e.target)}>
-              Skylight
-            </button>
-          </li>
-          <li id="motorization">
-            <button onClick={(e) => handleCategoryClick(e.target)}>
-              Motorization
-            </button>
-          </li>
-        </ul>
-      </div>
 
       <div
         className={

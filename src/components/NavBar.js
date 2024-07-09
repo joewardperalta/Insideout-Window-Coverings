@@ -1,7 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
-export default function NavBar() {
+import { usePathname } from "next/navigation";
+
+export default function NavBar({ handlerCategoryFunction }) {
+  const pathname = usePathname();
+
+  console.log(pathname);
+
   return (
     <>
       {/* Contacts Navbar */}
@@ -41,6 +49,32 @@ export default function NavBar() {
             </li>
           </ul>
         </nav>
+
+        {/* Render only when in products page */}
+        {pathname == "/products" && (
+          <div className="bg-gray-100 font-medium">
+            <ul className="container mx-auto flex" id="categories">
+              <li className="active" id="blinds">
+                <button className="btnCategory">Blinds</button>
+              </li>
+              <li id="shades">
+                <button className="btnCategory">Shades</button>
+              </li>
+              <li id="awning">
+                <button className="btnCategory">Awning</button>
+              </li>
+              <li id="drapery">
+                <button className="btnCategory">Drapery</button>
+              </li>
+              <li id="skylight">
+                <button className="btnCategory">Skylight</button>
+              </li>
+              <li id="motorization">
+                <button className="btnCategory">Motorization</button>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     </>
   );
