@@ -36,3 +36,6 @@ p {
 #hero {
   height: 40rem;
 }
+#hero-img {
+  transform: translate(-50%, -50%);
+}

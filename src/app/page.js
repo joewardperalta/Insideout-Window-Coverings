@@ -8,13 +8,16 @@ let index = 0;
 
 export default function Home() {
   const heroCoverUrl = [
-    "jason-leung-7XOYJHppytw-unsplash.jpg",
-    "ducminh-nguyen-hG3H6N6VwCY-unsplash.jpg",
-    "mike-cox-JXZ3bA_qLM4-unsplash.jpg",
-    "ryan-yao-BDvCewlnbD8-unsplash.jpg",
-    "darren-richardson-SnQHu8si5Yo-unsplash.jpg",
-    "helena-lopes-Pd8tLVGx2O4-unsplash.jpg",
-    "christopher-lemercier-tWPDKhDaE4k-unsplash.jpg",
+    "/background/image0000011.png",
+    "/background/image0000021.png",
+    "/background/image0000031.png",
+    "/background/image0000041.png",
+    "/background/image0000051.png",
+    "/background/image0000061.png",
+    "/background/image0000071.png",
+    "/background/image0000081.png",
+    "/background/image0000091.png",
+    "/background/image0000101.png",
   ];
   const [heroCover, setHeroCover] = useState(heroCoverUrl[0]);
 
@@ -42,14 +45,27 @@ export default function Home() {
   return (
     <main>
       {/* Hero section */}
-      <div id="hero">
+      <div className="relative" id="hero">
         <Image
-          className="object-cover h-full"
-          src={"/" + heroCover}
-          width={6000}
-          height={6000}
+          className="object-cover h-full w-full blur-sm object-center"
+          src={heroCover}
+          width={1000}
+          height={1000}
           alt="blinds"
         />
+
+        <div
+          className="absolute left-96 top-1/2 bg-white p-3 shadow-2xl"
+          id="hero-img"
+        >
+          <Image
+            className="object-cover object-center"
+            src={heroCover}
+            width={600}
+            height={600}
+            alt="blinds"
+          />
+        </div>
 
         {/* Left and right arrow keys */}
         <div className="bg-gray-950/50 w-full relative bottom-12 py-2">
@@ -79,8 +95,8 @@ export default function Home() {
         <div className="container mx-auto flex space-x-20 items-center">
           <Image
             className="rounded"
-            src="/steinar-engeland-hmIFzdQ6U5k-unsplash.jpg"
-            width={700}
+            src="/background/image0000041.png"
+            width={600}
             height={600}
             alt="window blinds"
           />
@@ -142,7 +158,7 @@ export default function Home() {
             <div className="h-80 p-2 bg-white rounded shadow-lg">
               <Image
                 className="rounded object-cover h-full"
-                src="/btg_product_wood_laredo_pewter.jpg"
+                src="/background/image0000011.png"
                 width={700}
                 height={600}
                 alt="window blinds"
@@ -152,7 +168,7 @@ export default function Home() {
             <div className="h-80 p-2 bg-white rounded shadow-lg">
               <Image
                 className="rounded object-cover h-full"
-                src="/ba2cd3_2f644cfd1f0d4b819c2e995568e3c7ad~mv2.jpg"
+                src="/background/image0000021.png"
                 width={700}
                 height={600}
                 alt="window blinds"
@@ -169,7 +185,7 @@ export default function Home() {
           <div className="w-full relative bg-slate-600">
             <Image
               className="object-cover w-full h-full"
-              src="/darren-richardson-9epGsXo_VdI-unsplash.jpg"
+              src="/background/image0000071 (1).png"
               width={2000}
               height={2000}
               alt="window blinds"
