@@ -43,7 +43,16 @@ export async function POST(request) {
     from: recepient.username,
     to: recepient.username,
     subject: sender.subject,
-    html: sender.message,
+    replyTo: sender.email,
+    html: `
+        <p style="margin-bottom: 20px;">Hello Rommel, </p>
+        <p>${sender.message}</p>
+        <p style="margin-top: 50px;">Thank you,</p>
+        <p style="margin-bottom: 0px;">
+          ${sender.firstname} ${sender.lastname}
+        </p>
+        <p style="margin-bottom: 0px; margin-top: 0px;">${sender.email}</p>
+        <p style="margin-top: 0px;">${sender.phone}</p>`,
   };
 
   await new Promise((resolve, reject) => {
