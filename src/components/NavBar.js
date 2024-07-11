@@ -4,22 +4,31 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function NavBar() {
+  const navbarNavWrapper = document.querySelector("#navbar-nav-wrapper");
   const pathname = usePathname();
+  const [currentWindowState, setCurrentWindowState] = useState("");
+  const largeBreakpoint = 1024;
 
   useEffect(() => {
     const productCategoryNavItem = document.querySelector(
       "#productCategoryNavItem"
     );
     const productNavItem = document.querySelector("#productNavItem");
+    let currentWindowSize = window.innerWidth;
 
     // Get the current size of the window
     addEventListener("resize", (e) => {
-      let currentWindowSize = window.innerWidth;
+      currentWindowSize = window.innerWidth;
 
-      if (currentWindowSize < 1024) {
+      // Set the state to small or large depending on window size
+      currentWindowSize < largeBreakpoint
+        ? setCurrentWindowState("small")
+        : setCurrentWindowState("large");
+
+      if (currentWindowState == "small") {
         if (pathname == "/products") {
           // Show the product category nav item
           productCategoryNavItem.classList.remove("hidden");
@@ -38,10 +47,17 @@ export default function NavBar() {
         productNavItem.classList.remove("hidden");
       }
     });
+
+    // Close the navbar if it was left open from small device
+    if (
+      currentWindowState == "large" &&
+      navbarNavWrapper.classList.contains("right-0")
+    ) {
+      closeNavbar();
+    }
   });
 
   function closeNavbar() {
-    const navbarNavWrapper = document.querySelector("#navbar-nav-wrapper");
     navbarNavWrapper.classList.toggle("right-full");
     navbarNavWrapper.classList.toggle("right-0");
   }
