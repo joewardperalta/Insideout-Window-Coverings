@@ -31,6 +31,24 @@ module.exports = {
         "window-motorization":
           "linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/licensed/pexels-pixabay-276724.jpg')",
       },
+
+      keyframes: {
+        verticalWipeForward: {
+          from: { "max-height": "0p" },
+          to: { "max-height": "500px" },
+        },
+        verticalWipeBackward: {
+          from: { "max-height": "500px" },
+          to: { "max-height": "0px" },
+        },
+      },
+
+      animation: {
+        verticalWipeForward:
+          "verticalWipeForward 0.5s ease-in-out 0s 1 normal forwards",
+        verticalWipeBackward:
+          "verticalWipeBackward 0.5s ease-in-out 0s 1 normal forwards",
+      },
     },
   },
   plugins: [],

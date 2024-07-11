@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Contact() {
   return (
-    <div className="container mx-auto py-14 flex justify-between">
+    <div className="container mx-auto pb-14 pt-52 flex justify-between">
       <div>
         {/* Contact information */}
         <ul className="grid grid-cols-2 gap-20">

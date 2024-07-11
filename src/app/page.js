@@ -24,6 +24,7 @@ export default function Home() {
       "/background/image0000101.png",
     ],
   ];
+
   const [heroCover, setHeroCover] = useState(heroCoverUrl[0]);
 
   // Changes the background image of hero section every 5 seconds
