@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import Footer from "./Footer";
 
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
@@ -53,7 +52,7 @@ export default function NavBar({ handlerCategoryFunction }) {
 
   return (
     <>
-      <div className="fixed lg:absolute w-full h-full z-10">
+      <div className="fixed w-full z-10">
         <AnnouncementBar />
         <div className="bg-white relative lg:sticky lg:top-0 shadow-lg shadow-gray-950/20">
           <div className="container mx-auto py-7">
