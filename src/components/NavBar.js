@@ -85,7 +85,11 @@ export default function NavBar({ handlerCategoryFunction }) {
 }
 
 function NavbarBrand({ children }) {
-  return <h1 className="text-4xl font-extrabold text-gray-950">{children}</h1>;
+  return (
+    <a href="/">
+      <h1 className="text-4xl font-extrabold text-gray-950">{children}</h1>
+    </a>
+  );
 }
 
 function HamburgerButton({ closeNavbar }) {
