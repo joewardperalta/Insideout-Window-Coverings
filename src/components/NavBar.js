@@ -7,57 +7,62 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function NavBar() {
-  const navbarNavWrapper = document.querySelector("#navbar-nav-wrapper");
   const pathname = usePathname();
-  const [currentWindowState, setCurrentWindowState] = useState("");
   const largeBreakpoint = 1024;
 
   useEffect(() => {
+    const navbarNavWrapper = document.querySelector("#navbar-nav-wrapper");
+
+    // Show the appropriate navbar based on a small device
+    if (window.innerWidth < largeBreakpoint) {
+      if (pathname == "/products") {
+        showProductCategoryNavItem();
+      } else {
+        showProductNavItem();
+      }
+    }
+
+    // Show the appropriate navbar based on the screen size
+    addEventListener("resize", (e) => {
+      if (window.innerWidth < largeBreakpoint) {
+        if (pathname == "/products") {
+          showProductCategoryNavItem();
+        } else {
+          showProductNavItem();
+        }
+      } else {
+        showProductNavItem();
+
+        // check if the navbar is open, if it is then close it
+        if (navbarNavWrapper.classList.contains("right-0")) {
+          closeNavbar();
+        }
+      }
+    });
+  });
+
+  function showProductCategoryNavItem() {
     const productCategoryNavItem = document.querySelector(
       "#productCategoryNavItem"
     );
     const productNavItem = document.querySelector("#productNavItem");
-    let currentWindowSize = window.innerWidth;
 
-    // Get the current size of the window
-    addEventListener("resize", (e) => {
-      currentWindowSize = window.innerWidth;
+    productCategoryNavItem.classList.remove("hidden");
+    productNavItem.classList.add("hidden");
+  }
 
-      // Set the state to small or large depending on window size
-      currentWindowSize < largeBreakpoint
-        ? setCurrentWindowState("small")
-        : setCurrentWindowState("large");
+  function showProductNavItem() {
+    const productCategoryNavItem = document.querySelector(
+      "#productCategoryNavItem"
+    );
+    const productNavItem = document.querySelector("#productNavItem");
 
-      if (currentWindowState == "small") {
-        if (pathname == "/products") {
-          // Show the product category nav item
-          productCategoryNavItem.classList.remove("hidden");
-
-          // Do not show the product nav item
-          productNavItem.classList.add("hidden");
-        } else {
-          // Show the product nav item
-          productNavItem.classList.remove("hidden");
-
-          // Do not show the product category nav item
-          productCategoryNavItem.classList.add("hidden");
-        }
-      } else {
-        // Show the product nav item
-        productNavItem.classList.remove("hidden");
-      }
-    });
-
-    // Close the navbar if it was left open from small device
-    if (
-      currentWindowState == "large" &&
-      navbarNavWrapper.classList.contains("right-0")
-    ) {
-      closeNavbar();
-    }
-  });
+    productNavItem.classList.remove("hidden");
+    productCategoryNavItem.classList.add("hidden");
+  }
 
   function closeNavbar() {
+    const navbarNavWrapper = document.querySelector("#navbar-nav-wrapper");
     navbarNavWrapper.classList.toggle("right-full");
     navbarNavWrapper.classList.toggle("right-0");
   }
