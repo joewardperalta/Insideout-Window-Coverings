@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-export default function NavBar({ handlerCategoryFunction }) {
+export default function NavBar() {
   const pathname = usePathname();
 
   useEffect(() => {
@@ -15,19 +15,29 @@ export default function NavBar({ handlerCategoryFunction }) {
     );
     const productNavItem = document.querySelector("#productNavItem");
 
-    if (pathname == "/products") {
-      // Show the product category nav item
-      productCategoryNavItem.classList.remove("hidden");
+    // Get the current size of the window
+    addEventListener("resize", (e) => {
+      let currentWindowSize = window.innerWidth;
 
-      // Do not show the product nav item
-      productNavItem.classList.add("hidden");
-    } else {
-      // Show the product nav item
-      productNavItem.classList.remove("hidden");
+      if (currentWindowSize < 1024) {
+        if (pathname == "/products") {
+          // Show the product category nav item
+          productCategoryNavItem.classList.remove("hidden");
 
-      // Do not show the product category nav item
-      productCategoryNavItem.classList.add("hidden");
-    }
+          // Do not show the product nav item
+          productNavItem.classList.add("hidden");
+        } else {
+          // Show the product nav item
+          productNavItem.classList.remove("hidden");
+
+          // Do not show the product category nav item
+          productCategoryNavItem.classList.add("hidden");
+        }
+      } else {
+        // Show the product nav item
+        productNavItem.classList.remove("hidden");
+      }
+    });
   });
 
   function closeNavbar() {
@@ -210,7 +220,11 @@ function CategoriesBar() {
     <div className="bg-gray-100 font-medium w-full absolute lg:static hidden lg:block">
       <ul className="container mx-auto flex" id="categories">
         {productCategories.map((name, i) => (
-          <li className={i == 0 && "active"} id={name.toLowerCase()} key={name}>
+          <li
+            className={i == 0 ? "active" : ""}
+            id={name.toLowerCase()}
+            key={name}
+          >
             <button className="btnCategory">{name}</button>
           </li>
         ))}
