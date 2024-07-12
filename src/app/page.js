@@ -126,10 +126,10 @@ function HeroSection({ slides }) {
 function AboutSection() {
   return (
     <section className="py-14 pt-28">
-      <div className="container mx-auto flex space-x-20 items-center">
-        <div className="w-full">
+      <div className="container mx-auto flex lg:space-x-20 xl:items-center">
+        <div className="hidden lg:block w-full">
           <Image
-            className="rounded h-full"
+            className="rounded h-full object-cover"
             src="/background/singles/image0000041-landscape.png"
             width={3000}
             height={3000}
@@ -138,8 +138,8 @@ function AboutSection() {
         </div>
 
         <div>
-          <h2 className="text-6xl uppercase font-semibold mb-5">
-            <div className="text-3xl uppercase font-semibold text-gray-600">
+          <h2 className="text-4xl md:text-6xl uppercase font-semibold mb-5">
+            <div className="text-2xl md:text-3xl uppercase font-semibold text-gray-600">
               About
             </div>
             Inside out
