@@ -13,14 +13,13 @@ export default function Home() {
   const slides = [
     "/background/singles/image0000011.png",
     "/background/singles/image0000021.png",
+    "/background/singles/image0000101.png",
     "/background/singles/image0000031.png",
     "/background/singles/image0000041.png",
-    "/background/singles/image0000051.png",
+    "/background/singles/image0000081.png",
     "/background/singles/image0000061.png",
     "/background/singles/image0000071.png",
-    "/background/singles/image0000081.png",
     "/background/singles/image0000091.png",
-    "/background/singles/image0000101.png",
   ];
 
   return (
@@ -55,12 +54,12 @@ function HeroSection({ slides }) {
   };
 
   return (
-    <section className="lg:h-108" id="hero">
+    <section className="lg:h-110" id="hero">
       <Carousel
         additionalTransfrom={0}
         arrows
         autoPlay
-        autoPlaySpeed={3000}
+        autoPlaySpeed={5000}
         centerMode={false}
         className="h-full"
         containerClass="container-with-dots"
@@ -71,7 +70,6 @@ function HeroSection({ slides }) {
         itemClass=""
         keyBoardControl
         minimumTouchDrag={80}
-        pauseOnHover
         renderArrowsWhenDisabled={false}
         renderButtonGroupOutside={false}
         renderDotsOutside={false}
@@ -111,7 +109,14 @@ function HeroSection({ slides }) {
         swipeable
       >
         {slides.map((src) => (
-          <Image key={src} src={src} height={3000} width={3000} alt="product" />
+          <Image
+            className="h-full w-full object-cover"
+            key={src}
+            src={src}
+            height={3000}
+            width={3000}
+            alt="product"
+          />
         ))}
       </Carousel>
     </section>
