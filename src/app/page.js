@@ -125,7 +125,7 @@ function HeroSection({ slides }) {
 
 function AboutSection() {
   return (
-    <section className="py-14 pt-28">
+    <section className="pt-16 lg:pt-20">
       <div className="container mx-auto flex lg:space-x-20 xl:items-center">
         <div className="hidden lg:block w-full">
           <Image
@@ -165,12 +165,12 @@ function AboutSection() {
 
 function WhyChooseUsSection() {
   return (
-    <section className="py-14">
+    <section className="pt-16 lg:pt-20">
       <div className="container mx-auto">
-        <div className="w-1/2 mb-10">
-          <h2 className="text-3xl uppercase font-semibold text-gray-600">
+        <div className="lg:w-1/2 mb-10">
+          <h2 className="text-2xl md:text-3xl uppercase font-semibold text-gray-600">
             Why
-            <div className="text-6xl uppercase font-semibold mb-5 text-black">
+            <div className="text-4xl md:text-6xl uppercase font-semibold mb-5 text-black">
               Choose us?
             </div>
           </h2>
