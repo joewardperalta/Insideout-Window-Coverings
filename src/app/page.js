@@ -77,31 +77,20 @@ export default function Home() {
 function HeroSection({ currentSlideImage, handleArrowClick }) {
   const screenWidth = useRef(0);
 
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      screenWidth.current = window.innerWidth;
-
-      if (screenWidth.current < bp_large) {
-      }
-    });
-  });
-
   return (
-    <section>
+    <>
       {/* Background images */}
       <div className="relative" id="hero">
-        <div className="h-full w-full lg:flex">
-          {
-            <div className="w-full">
-              <Image
-                className="w-full h-full object-cover"
-                width={2000}
-                height={2000}
-                src={currentSlideImage}
-                alt="blinds"
-              />
-            </div>
-          }
+        <div className="h-full w-full">
+          <div className="w-full">
+            <Image
+              className="w-full h-full object-cover"
+              width={3000}
+              height={3000}
+              src={currentSlideImage}
+              alt="blinds"
+            />
+          </div>
         </div>
       </div>
 
@@ -126,7 +115,7 @@ function HeroSection({ currentSlideImage, handleArrowClick }) {
           </button>
         </div>
       </div>
-    </section>
+    </>
   );
 }
 
