@@ -4,16 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
 import { bp_large } from "../../constants/breakpoints";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 let index = 0;
 
 export default function Home() {
-  const slidesImages = [
-    "/background/slides/Slide 1.png",
-    "/background/slides/Slide 2.png",
-    "/background/slides/Slide 3.png",
-  ];
-  const singleImages = [
+  const slides = [
     "/background/singles/image0000011.png",
     "/background/singles/image0000021.png",
     "/background/singles/image0000031.png",
@@ -26,36 +23,10 @@ export default function Home() {
     "/background/singles/image0000101.png",
   ];
 
-  const [currentSlideImage, setCurrentSlideImage] = useState(slidesImages[0]);
-
-  // Changes the background image of hero section every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      index < slidesImages.length - 1 ? (index += 1) : (index = 0);
-      setCurrentSlideImage(slidesImages[index]);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  });
-
-  // Changes the hero's section background image based on arrow selected
-  function handleArrowClick(e) {
-    if (e.target.alt == "left arrow") {
-      index > 0 ? (index -= 1) : (index = slidesImages.length - 1);
-      setCurrentSlideImage(slidesImages[index]);
-    } else {
-      index < slidesImages.length - 1 ? (index += 1) : (index = 0);
-      setCurrentSlideImage(slidesImages[index]);
-    }
-  }
-
   return (
     <main>
       {/* Hero section */}
-      <HeroSection
-        currentSlideImage={currentSlideImage}
-        handleArrowClick={handleArrowClick}
-      />
+      <HeroSection slides={slides} />
 
       {/* About section */}
       <AboutSection />
@@ -74,48 +45,76 @@ export default function Home() {
 
 // ----------------------- LOCAL COMPONENTS -----------------------
 
-function HeroSection({ currentSlideImage, handleArrowClick }) {
-  const screenWidth = useRef(0);
+function HeroSection({ slides }) {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  };
 
   return (
-    <>
-      {/* Background images */}
-      <div className="relative" id="hero">
-        <div className="h-full w-full">
-          <div className="w-full">
-            <Image
-              className="w-full h-full object-cover"
-              width={3000}
-              height={3000}
-              src={currentSlideImage}
-              alt="blinds"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Buttons to go next and previous */}
-      <div className="bg-gray-950/50 w-full relative bottom-12 py-2">
-        <div className="container mx-auto flex justify-between">
-          <button onClick={(e) => handleArrowClick(e)}>
-            <Image
-              src="/icons/211689_left_arrow_icon (1).svg"
-              alt="left arrow"
-              width={32}
-              height={32}
-            />
-          </button>
-          <button onClick={(e) => handleArrowClick(e)}>
-            <Image
-              src="/icons/211607_right_arrow_icon.svg"
-              alt="right arrow"
-              width={32}
-              height={32}
-            />
-          </button>
-        </div>
-      </div>
-    </>
+    <section className="lg:h-108" id="hero">
+      <Carousel
+        additionalTransfrom={0}
+        arrows
+        autoPlay
+        autoPlaySpeed={3000}
+        centerMode={false}
+        className="h-full"
+        containerClass="container-with-dots"
+        dotListClass=""
+        draggable
+        focusOnSelect={false}
+        infinite
+        itemClass=""
+        keyBoardControl
+        minimumTouchDrag={80}
+        pauseOnHover
+        renderArrowsWhenDisabled={false}
+        renderButtonGroupOutside={false}
+        renderDotsOutside={false}
+        responsive={{
+          desktop: {
+            breakpoint: {
+              max: 3000,
+              min: 1024,
+            },
+            items: 3,
+            partialVisibilityGutter: 40,
+          },
+          mobile: {
+            breakpoint: {
+              max: 464,
+              min: 0,
+            },
+            items: 1,
+            partialVisibilityGutter: 30,
+          },
+          tablet: {
+            breakpoint: {
+              max: 1024,
+              min: 464,
+            },
+            items: 2,
+            partialVisibilityGutter: 30,
+          },
+        }}
+        rewind={false}
+        rewindWithAnimation={false}
+        rtl={false}
+        shouldResetAutoplay
+        showDots={false}
+        sliderClass=""
+        slidesToSlide={3}
+        swipeable
+      >
+        {slides.map((src) => (
+          <Image key={src} src={src} height={3000} width={3000} alt="product" />
+        ))}
+      </Carousel>
+    </section>
   );
 }
 
@@ -123,13 +122,15 @@ function AboutSection() {
   return (
     <section className="py-14 pt-28">
       <div className="container mx-auto flex space-x-20 items-center">
-        <Image
-          className="rounded"
-          src="/background/singles/image0000041.png"
-          width={600}
-          height={600}
-          alt="window blinds"
-        />
+        <div className="w-full">
+          <Image
+            className="rounded h-full"
+            src="/background/singles/image0000041-landscape.png"
+            width={3000}
+            height={3000}
+            alt="window blinds"
+          />
+        </div>
 
         <div>
           <h2 className="text-6xl uppercase font-semibold mb-5">

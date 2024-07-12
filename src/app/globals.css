@@ -57,9 +57,10 @@
 }
 
 #hero {
-  height: 50%;
-  padding-top: 50px;
+  padding-top: 136px;
+  position: relative;
 }
+
 #hero-img {
   transform: translate(-50%, -50%);
 }

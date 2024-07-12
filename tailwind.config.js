@@ -49,6 +49,18 @@ module.exports = {
         verticalWipeBackward:
           "verticalWipeBackward 0.5s ease-in-out 0s 1 normal forwards",
       },
+
+      height: {
+        100: "30rem",
+        101: "32rem",
+        102: "34rem",
+        103: "36rem",
+        104: "38rem",
+        105: "40rem",
+        106: "42rem",
+        107: "44rem",
+        108: "46rem",
+      },
     },
   },
   plugins: [],
