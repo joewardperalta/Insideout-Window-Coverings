@@ -220,7 +220,7 @@ function ProductSection() {
         <div className="w-full relative bg-slate-600">
           <Image
             className="object-cover w-full h-full"
-            src="/background/image0000071 (1).png"
+            src="/background/singles/image0000071.png"
             width={2000}
             height={2000}
             alt="window blinds"
