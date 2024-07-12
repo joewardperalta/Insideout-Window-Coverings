@@ -2,19 +2,18 @@
 
 import Image from "next/image";
 import Link from "next/link";
-
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { bp_large } from "../../constants/breakpoints";
 
 export default function NavBar() {
   const pathname = usePathname();
-  const largeBreakpoint = 1024;
 
   useEffect(() => {
     const navbarNavWrapper = document.querySelector("#navbar-nav-wrapper");
 
     // Show the appropriate navbar based on a small device
-    if (window.innerWidth < largeBreakpoint) {
+    if (window.innerWidth < bp_large) {
       if (pathname == "/products") {
         showProductCategoryNavItem();
       } else {
@@ -24,7 +23,7 @@ export default function NavBar() {
 
     // Show the appropriate navbar based on the screen size
     addEventListener("resize", (e) => {
-      if (window.innerWidth < largeBreakpoint) {
+      if (window.innerWidth < bp_large) {
         if (pathname == "/products") {
           showProductCategoryNavItem();
         } else {
@@ -115,6 +114,7 @@ export default function NavBar() {
   );
 }
 
+//-------------------- LOCAL COMPONENTS --------------------
 function NavbarBrand({ children }) {
   return (
     <a href="/">
@@ -253,3 +253,4 @@ function CategoriesBar() {
     </div>
   );
 }
+//-------------------- LOCAL COMPONENTS END --------------------
