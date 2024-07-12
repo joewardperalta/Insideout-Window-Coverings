@@ -1,37 +1,38 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
+import { bp_large } from "../../constants/breakpoints";
 
 let index = 0;
 
 export default function Home() {
-  const heroCoverUrl = [
-    [
-      "/background/image0000011.png",
-      "/background/image0000021.png",
-      "/background/image0000031.png",
-    ],
-    [
-      "/background/image0000041.png",
-      "/background/image0000081.png",
-      "/background/image0000091.png",
-    ],
-    [
-      "/background/image0000071.png",
-      "/background/image0000061.png",
-      "/background/image0000101.png",
-    ],
+  const slidesImages = [
+    "/background/slides/Slide 1.png",
+    "/background/slides/Slide 2.png",
+    "/background/slides/Slide 3.png",
+  ];
+  const singleImages = [
+    "/background/singles/image0000011.png",
+    "/background/singles/image0000021.png",
+    "/background/singles/image0000031.png",
+    "/background/singles/image0000041.png",
+    "/background/singles/image0000051.png",
+    "/background/singles/image0000061.png",
+    "/background/singles/image0000071.png",
+    "/background/singles/image0000081.png",
+    "/background/singles/image0000091.png",
+    "/background/singles/image0000101.png",
   ];
 
-  const [heroCover, setHeroCover] = useState(heroCoverUrl[0]);
+  const [currentSlideImage, setCurrentSlideImage] = useState(slidesImages[0]);
 
   // Changes the background image of hero section every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      index < heroCoverUrl.length - 1 ? (index += 1) : (index = 0);
-      setHeroCover(heroCoverUrl[index]);
+      index < slidesImages.length - 1 ? (index += 1) : (index = 0);
+      setCurrentSlideImage(slidesImages[index]);
     }, 4000);
 
     return () => clearInterval(interval);
@@ -40,18 +41,21 @@ export default function Home() {
   // Changes the hero's section background image based on arrow selected
   function handleArrowClick(e) {
     if (e.target.alt == "left arrow") {
-      index > 0 ? (index -= 1) : (index = heroCoverUrl.length - 1);
-      setHeroCover(heroCoverUrl[index]);
+      index > 0 ? (index -= 1) : (index = slidesImages.length - 1);
+      setCurrentSlideImage(slidesImages[index]);
     } else {
-      index < heroCoverUrl.length - 1 ? (index += 1) : (index = 0);
-      setHeroCover(heroCoverUrl[index]);
+      index < slidesImages.length - 1 ? (index += 1) : (index = 0);
+      setCurrentSlideImage(slidesImages[index]);
     }
   }
 
   return (
     <main>
       {/* Hero section */}
-      <HeroSection heroCover={heroCover} />
+      <HeroSection
+        currentSlideImage={currentSlideImage}
+        handleArrowClick={handleArrowClick}
+      />
 
       {/* About section */}
       <AboutSection />
@@ -70,23 +74,34 @@ export default function Home() {
 
 // ----------------------- LOCAL COMPONENTS -----------------------
 
-function HeroSection({ heroCover }) {
+function HeroSection({ currentSlideImage, handleArrowClick }) {
+  const screenWidth = useRef(0);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      screenWidth.current = window.innerWidth;
+
+      if (screenWidth.current < bp_large) {
+      }
+    });
+  });
+
   return (
     <section>
       {/* Background images */}
       <div className="relative" id="hero">
-        <div className="h-full w-full flex">
-          {heroCover.map((url) => (
-            <div key={url} className="w-full">
+        <div className="h-full w-full lg:flex">
+          {
+            <div className="w-full">
               <Image
                 className="w-full h-full object-cover"
                 width={2000}
                 height={2000}
-                src={url}
+                src={currentSlideImage}
                 alt="blinds"
               />
             </div>
-          ))}
+          }
         </div>
       </div>
 
