@@ -125,7 +125,7 @@ function AboutSection() {
       <div className="container mx-auto flex space-x-20 items-center">
         <Image
           className="rounded"
-          src="/background/image0000041.png"
+          src="/background/singles/image0000041.png"
           width={600}
           height={600}
           alt="window blinds"
@@ -190,7 +190,7 @@ function WhyChooseUsSection() {
           <div className="h-80 p-2 bg-white rounded shadow-lg">
             <Image
               className="rounded object-cover h-full"
-              src="/background/image0000011.png"
+              src="/background/singles/image0000011.png"
               width={700}
               height={600}
               alt="window blinds"
@@ -200,7 +200,7 @@ function WhyChooseUsSection() {
           <div className="h-80 p-2 bg-white rounded shadow-lg">
             <Image
               className="rounded object-cover h-full"
-              src="/background/image0000021.png"
+              src="/background/singles/image0000021.png"
               width={700}
               height={600}
               alt="window blinds"
