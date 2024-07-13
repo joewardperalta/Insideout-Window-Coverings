@@ -221,7 +221,7 @@ function WhyChooseUsSection() {
 function ProductSection() {
   return (
     <section className="py-14">
-      <div className="flex">
+      <div className="grid grid-col md:grid-cols-2 lg:grid-cols-3">
         {/* Blinds */}
         <div className="w-full relative bg-slate-600">
           <Image
@@ -231,8 +231,7 @@ function ProductSection() {
             height={2000}
             alt="window blinds"
           />
-
-          <div className="absolute bottom-0 py-5 px-5 text-white bg-gray-950/80 h-1/4">
+          <div className="absolute bottom-0 py-5 px-5 text-white bg-gray-950/80 min-h-56">
             <h6 className="font-semibold text-3xl mb-2">Blinds</h6>
             <p className="text-gray-300">
               Window blinds offer a combination of practical benefits, aesthetic
@@ -252,8 +251,7 @@ function ProductSection() {
             height={2000}
             alt="window curtains"
           />
-
-          <div className="absolute bottom-0 py-5 px-5 text-white bg-gray-950/80  h-1/4">
+          <div className="absolute bottom-0 py-5 px-5 text-white bg-gray-950/80 min-h-56">
             <h6 className="font-semibold text-3xl mb-2">Drapery</h6>
             <p className="text-gray-300">
               Drapery provides a blend of style, functionality, and practical
@@ -264,7 +262,7 @@ function ProductSection() {
         </div>
 
         {/* Shades */}
-        <div className="w-full bg-slate-600 relative">
+        <div className="w-full bg-slate-600 relative col-span-1 md:col-span-2 lg:col-span-1">
           <Image
             className="object-cover w-full h-full"
             src="/White-Linen-Shades.jpg"
@@ -272,8 +270,7 @@ function ProductSection() {
             height={2000}
             alt="Window coverings"
           />
-
-          <div className="absolute bottom-0 py-5 px-5 text-white bg-gray-950/80 h-1/4">
+          <div className="absolute bottom-0 py-5 px-5 text-white bg-gray-950/80 min-h-56">
             <h6 className="font-semibold text-3xl mb-2">Shades</h6>
             <p className="text-gray-300">
               Window shades offer a blend of functionality, style, and energy
