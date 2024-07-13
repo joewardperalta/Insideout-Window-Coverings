@@ -193,7 +193,7 @@ function WhyChooseUsSection() {
             />
           </div>
 
-          <div className="h-80 p-2 bg-white rounded shadow-lg">
+          <div className="h-80 p-2 bg-white rounded shadow-lg hidden md:block">
             <Image
               className="rounded object-cover h-full"
               src="/background/singles/image0000011.png"
@@ -203,7 +203,7 @@ function WhyChooseUsSection() {
             />
           </div>
 
-          <div className="h-80 p-2 bg-white rounded shadow-lg">
+          <div className="h-80 p-2 bg-white rounded shadow-lg hidden lg:block">
             <Image
               className="rounded object-cover h-full"
               src="/background/singles/image0000021.png"
