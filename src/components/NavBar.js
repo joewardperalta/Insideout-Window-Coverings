@@ -78,6 +78,8 @@ export default function NavBar() {
     const navbarNavWrapper = document.querySelector("#navbar-nav-wrapper");
     navbarNavWrapper.classList.toggle("right-0");
     navbarNavWrapper.classList.toggle("right-full");
+    window.scrollTo(0, 0);
+    console.log("Hello");
   }
 
   return (
