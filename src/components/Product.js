@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Product({ imgUrl, title, desc }) {
   return (
-    <div className="product bg-white rounded w-2/6">
+    <div className="product bg-white rounded">
       <div className="h-80">
         <Image
           className="object-cover w-full h-full rounded-t"

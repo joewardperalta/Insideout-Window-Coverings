@@ -142,34 +142,41 @@ export default function Products() {
       {/* Product Categories */}
       <div
         className={
-          category.backgroundImage + " bg-cover bg-top bg-no-repeat mb-14 "
+          category.backgroundImage +
+          " bg-cover bg-top bg-no-repeat mb-14 pt-80 sm:pt-100"
         }
       >
         <div
           className="container mx-auto pb-24 text-white"
           id="product-header-section"
         >
-          <div className="w-1/2">
-            <h2 className="text-6xl font-semibold uppercase mb-7">
+          <div className="lg:w-1/2">
+            <h2 className="text-3xl sm:text-6xl lg:text-6xl font-semibold uppercase mb-7">
               {category.title}
             </h2>
-            <p className="text-xl">{category.description}</p>
+            <p className="sm:text-lg">{category.description}</p>
           </div>
         </div>
       </div>
 
       {/* List of products */}
-      <div className="container mx-auto py-14 flex justify-center gap-16">
-        {category.products.map((product) => (
-          <Product
-            key={product.id}
-            imgUrl={product.imgUrl}
-            title={product.name}
-            desc={product.description}
-          />
-        ))}
+      <div className="container mx-auto py-14 ">
+        <div
+          className={
+            category.products.length > 0
+              ? "grid lg:grid-cols-2 xl:grid-cols-3 gap-12"
+              : "flex justify-center"
+          }
+        >
+          {category.products.map((product) => (
+            <Product
+              key={product.id}
+              imgUrl={product.imgUrl}
+              title={product.name}
+              desc={product.description}
+            />
+          ))}
 
-        <h5>
           {category.products.length <= 0 ? (
             <div>
               <h5 className="text-2xl font-medium mb-10">Dear Customers,</h5>
@@ -189,7 +196,7 @@ export default function Products() {
           ) : (
             ""
           )}
-        </h5>
+        </div>
       </div>
     </div>
   );
