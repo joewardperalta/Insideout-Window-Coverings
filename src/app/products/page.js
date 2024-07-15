@@ -127,6 +127,9 @@ export default function Products() {
       default:
         setCategory(blinds);
     }
+
+    // reset page to the top
+    window.scrollTo(0, 0);
   }
 
   // add onclick event handlers to category buttons
