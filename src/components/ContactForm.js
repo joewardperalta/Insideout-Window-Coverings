@@ -24,7 +24,7 @@ export default function ContactForm() {
       onSubmit={handleFormSubmit}
       method="POST"
       encType="multipart/form-data"
-      className="space-y-5 w-2/5"
+      className="space-y-5"
       id="contactForm"
     >
       <div className="flex space-x-5">
