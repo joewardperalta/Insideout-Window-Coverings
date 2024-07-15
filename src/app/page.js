@@ -219,66 +219,48 @@ function WhyChooseUsSection() {
 }
 
 function ProductSection() {
+  const product = [
+    {
+      title: "Blinds",
+      desc: "Window blinds offer a combination of practical benefits, aesthetic appeal, and functional versatility, making them a popular choice for enhancing privacy, controlling light, and improving energy efficiency in residential and commercial spaces.",
+      src: "/background/singles/image0000071.png",
+      alt: "blinds",
+    },
+    {
+      title: "Drapery",
+      desc: "Drapery provides a blend of style, functionality, and practical benefits, making them a popular choice for enhancing the comfort and aesthetics of any living or working space.",
+      src: "/Window-Curtains-Master-Bed-Room.jpg",
+      alt: "curtains",
+    },
+    {
+      title: "Shades",
+      desc: "Window shades offer a blend of functionality, style, and energy efficiency, making them a practical and attractive choice for enhancing the comfort and ambiance of any space",
+      src: "/White-Linen-Shades.jpg",
+      alt: "shades",
+    },
+  ];
+
   return (
     <section className="py-14">
-      <div className="grid grid-col md:grid-cols-2 lg:grid-cols-3">
-        {/* Blinds */}
-        <div className="w-full relative bg-slate-600">
-          <Image
-            className="object-cover w-full h-full"
-            src="/background/singles/image0000071.png"
-            width={2000}
-            height={2000}
-            alt="window blinds"
-          />
-          <div className="absolute bottom-0 py-5 px-5 text-white bg-gray-950/80 min-h-56">
-            <h6 className="font-semibold text-3xl mb-2">Blinds</h6>
-            <p className="text-gray-300">
-              Window blinds offer a combination of practical benefits, aesthetic
-              appeal, and functional versatility, making them a popular choice
-              for enhancing privacy, controlling light, and improving energy
-              efficiency in residential and commercial spaces.
-            </p>
+      <div className="grid grid-col md:grid-cols-3">
+        {product.map((product) => (
+          <div
+            key={product.title}
+            className="w-full h-110 relative bg-slate-600"
+          >
+            <Image
+              className="object-cover w-full h-full"
+              src={product.src}
+              width={2000}
+              height={2000}
+              alt="window blinds"
+            />
+            <div className="absolute bottom-0 py-5 px-5 text-white bg-gray-950/80 lg:min-h-80 w-full">
+              <h6 className="font-semibold text-3xl mb-5">{product.title}</h6>
+              <p className="text-gray-300">{product.desc}</p>
+            </div>
           </div>
-        </div>
-
-        {/* Drapery */}
-        <div className="w-full bg-slate-600 relative">
-          <Image
-            className="object-cover w-full h-full"
-            src="/Window-Curtains-Master-Bed-Room.jpg"
-            width={2000}
-            height={2000}
-            alt="window curtains"
-          />
-          <div className="absolute bottom-0 py-5 px-5 text-white bg-gray-950/80 min-h-56">
-            <h6 className="font-semibold text-3xl mb-2">Drapery</h6>
-            <p className="text-gray-300">
-              Drapery provides a blend of style, functionality, and practical
-              benefits, making them a popular choice for enhancing the comfort
-              and aesthetics of any living or working space.
-            </p>
-          </div>
-        </div>
-
-        {/* Shades */}
-        <div className="w-full bg-slate-600 relative col-span-1 md:col-span-2 lg:col-span-1">
-          <Image
-            className="object-cover w-full h-full"
-            src="/White-Linen-Shades.jpg"
-            width={2000}
-            height={2000}
-            alt="Window coverings"
-          />
-          <div className="absolute bottom-0 py-5 px-5 text-white bg-gray-950/80 min-h-56">
-            <h6 className="font-semibold text-3xl mb-2">Shades</h6>
-            <p className="text-gray-300">
-              Window shades offer a blend of functionality, style, and energy
-              efficiency, making them a practical and attractive choice for
-              enhancing the comfort and ambiance of any space.
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
