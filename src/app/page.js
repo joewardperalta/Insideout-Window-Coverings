@@ -186,7 +186,7 @@ function WhyChooseUsSection() {
           <div className="h-80 p-2 bg-white rounded shadow-lg">
             <Image
               className="rounded object-cover h-full"
-              src="/large-windows-alustra-pirouette-window-shadings-hunter-douglas-traditional-living-room-one-stop-decorating.jpg"
+              src="/background/singles/large-windows-alustra-pirouette-window-shadings-hunter-douglas-traditional-living-room-one-stop-decorating.jpg"
               width={700}
               height={300}
               alt="window coverings"
@@ -229,13 +229,13 @@ function ProductSection() {
     {
       title: "Drapery",
       desc: "Drapery provides a blend of style, functionality, and practical benefits, making them a popular choice for enhancing the comfort and aesthetics of any living or working space.",
-      src: "/Window-Curtains-Master-Bed-Room.jpg",
+      src: "/background/singles/Window-Curtains-Master-Bed-Room.jpg",
       alt: "curtains",
     },
     {
       title: "Shades",
       desc: "Window shades offer a blend of functionality, style, and energy efficiency, making them a practical and attractive choice for enhancing the comfort and ambiance of any space",
-      src: "/White-Linen-Shades.jpg",
+      src: "/background/singles/White-Linen-Shades.jpg",
       alt: "shades",
     },
   ];
